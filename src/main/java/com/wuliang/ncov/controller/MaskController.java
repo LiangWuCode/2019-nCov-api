@@ -1,7 +1,6 @@
 package com.wuliang.ncov.controller;
 
 import cn.hutool.json.JSONUtil;
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.wuliang.ncov.core.ResponseMode.Result;
@@ -32,7 +31,6 @@ public class MaskController {
      * @return
      */
     @GetMapping("/gauzeMask")
-    @SentinelResource("gauzeMask")
     @ApiOperation("口罩预约相关信息")
     public Result gauzeMask() {
         Object res = "";

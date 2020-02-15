@@ -1,9 +1,9 @@
 server:
   port: 80
-spring:
-  application:
-    name: ncov
-  cloud:
-    sentinel:
-      transport:
-        dashboard: 127.0.0.1:8088
+#spring:
+#  application:
+#    name: ncov
+#  cloud:
+#    sentinel:
+#      transport:
+#        dashboard: 127.0.0.1:8088

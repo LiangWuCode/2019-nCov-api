@@ -29,8 +29,8 @@ public class SwaggerConfiguration {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("新冠肺炎api")
-                .description("数据爬取，获取相关接口")
-                .contact("伍亮")
+                .description("疫情相关数据爬取，代码很简单，收集废了点时间，欢迎star，如果使用希望备注出处")
+                .contact("伍亮(https://github.com/LiangWuCode/2019-nCov-api)")
                 .version("1.0")
                 .build();
     }
