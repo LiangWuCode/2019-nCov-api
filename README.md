@@ -4,12 +4,18 @@
 # 前言
 本项目通过爬取腾讯、新浪、丁香园等疫情数据，获取新冠肺炎相关数据，并整合为api数据，做法简单粗暴，类似于端口转发。数据包含口罩预约、同乘车辆、疫情小区、数据分析、国内外详细数据、实时新闻动态、确诊人员信息流动轨迹、疫情谣言等。
 当前接口部署到我自己的乞丐服务器上面的，可能速度有点慢，希望且用且珍惜。
+
+
 文档地址：https://wuliang.art/ncov/doc.html#/home
+
+
 另外前期仓促之间也用flutter搞了个app，欢迎star https://github.com/LiangWuCode/2019-nCoV
+
+
 下载链接：https://www.wuliang.art/app-release.apk
 
 
-#api简介
+# api简介
 **简介**:新冠肺炎api
 
 
