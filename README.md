@@ -17,7 +17,8 @@
 # 总体图
 <img src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/api.png" width = "300" height = "300" div align=center />
 
-# api简介
+# api说明
+
 **简介**:新冠肺炎api
 
 
@@ -27,7 +28,7 @@
 **联系人**:伍亮（qq：937743837（微信同））
 
 
-有任何问题call
+api名称如果包含数字，则表示返回的数据内容类似（但数据格式不一样），只是数据来源不一样，使用时甄选使用。有任何问题call
 
 
 
