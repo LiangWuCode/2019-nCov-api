@@ -4,6 +4,7 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.wuliang.ncov.core.ResponseMode.Result;
@@ -38,6 +39,7 @@ public class VillageController {
      */
     @GetMapping("/getVillage1")
     @ApiOperation("获取小区数据1")
+    @SentinelResource("/getVillage1")
     public Result getVillage1(@RequestParam("cityName") String cityName) {
         Object res = "";
 
@@ -47,7 +49,6 @@ public class VillageController {
                     .userAgent("Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.2.15)")
                     .header("content-type", "application/json")
                     .timeout(5000).get();
-            System.out.println(doc.body().html());
             if (!StrUtil.contains("{}", doc.body().html())) {
                 res = JSONUtil.parseObj(doc.body().html()).get("poiResults");
             } else {
@@ -72,6 +73,7 @@ public class VillageController {
      */
     @GetMapping("/getVillage2")
     @ApiOperation("获取小区数据2")
+    @SentinelResource("/getVillage2")
     public Result getVillage2(@RequestParam("cityName") String cityName) {
         Object res = "";
 
@@ -124,6 +126,7 @@ public class VillageController {
      */
     @GetMapping("/getVillageByCommunityName")
     @ApiOperation("根据小区名称查询疫情小区")
+    @SentinelResource("/getVillageByCommunityName")
     public Result getVillageByCommunityName(@RequestParam("communityName") String communityName) {
         Object res = "";
         try {

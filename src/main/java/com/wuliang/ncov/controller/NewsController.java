@@ -5,6 +5,7 @@ import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.fastjson.JSON;
 import com.wuliang.ncov.core.ResponseMode.Result;
 import com.wuliang.ncov.core.ResponseMode.ResultGenerator;
@@ -35,6 +36,7 @@ public class NewsController {
      */
     @GetMapping("/getCityNewsList")
     @ApiOperation("根据市的名称获取该市的新闻信息")
+    @SentinelResource("/getCityNewsList")
     public Result getCityNewsList(@RequestParam("cityName") String cityName) {
         String result2 = HttpUtil.get("https://m.sm.cn/api/rest?method=yiqing.getZixun&uc_param_str=gi&city=" + cityName, CharsetUtil.CHARSET_UTF_8);
         return ResultGenerator.genSuccessResult(JSONUtil.parse(UnicodeUtil.toString(result2)));
@@ -48,6 +50,7 @@ public class NewsController {
      */
     @GetMapping("/getDiagnoseList")
     @ApiOperation("关于疫情百科知识 （检查诊断）")
+    @SentinelResource("/getDiagnoseList")
     public Result getDiagnoseList(@RequestParam("count") Integer count) {
         String res = "";
         try {
@@ -74,6 +77,7 @@ public class NewsController {
      */
     @GetMapping("/getGuideList")
     @ApiOperation("关于疫情百科知识 （预防指南）")
+    @SentinelResource("/getGuideList")
     public Result getGuideList(@RequestParam("count") Integer count) {
         String res = "";
         try {

@@ -3,6 +3,7 @@ package com.wuliang.ncov.controller;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.wuliang.ncov.core.ResponseMode.Result;
@@ -37,11 +38,13 @@ public class SameRideController {
      */
     @GetMapping("/getSameRideAll")
     @ApiOperation("获取所有同乘车辆数据")
+    @SentinelResource("/getSameRideAll")
     public Result getSameRideAll() {
         Object res = "";
         try {
             Document doc = Jsoup.connect("https://rl.inews.qq.com/taf/travelFront")
                     .ignoreContentType(true)
+                    .maxBodySize(0)
                     .userAgent("Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.2.15)")
                     .header("content-type", "application/json")
                     .timeout(5000).get();
@@ -60,6 +63,7 @@ public class SameRideController {
      */
     @GetMapping("/getSameRide1")
     @ApiOperation("查询同程车辆数据1")
+    @SentinelResource("/getSameRide1")
     public Result getSameRide(@RequestParam(value = "no", required = false) String no, @RequestParam(value = "date", required = false) String date) {
         Object res = "";
         JSONObject json = JSONUtil.createObj();
@@ -102,6 +106,7 @@ public class SameRideController {
      */
     @GetMapping("/getSameRide2")
     @ApiOperation("查询同程车辆数据2")
+    @SentinelResource("/getSameRide2")
     public Result getSameRide2(@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
                                @RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
                                @RequestParam(value = "position", required = false, defaultValue = "") String position,
