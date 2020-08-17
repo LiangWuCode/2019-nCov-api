@@ -18,7 +18,6 @@
 另外前期仓促之间也用flutter搞了个app，欢迎star https://github.com/LiangWuCode/2019-nCoV
 
 
-下载链接：https://www.wuliang.art/app-release.apk
 
 # 总体图
 <img src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/api.png" width = "300" height = "300" div align=center />
