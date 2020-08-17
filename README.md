@@ -12,7 +12,7 @@
 当前接口部署到我自己的乞丐服务器上面的，可能速度有点慢，希望且用且珍惜。
 
 
-文档地址：https://wuliang.art/ncov/doc.html#/home
+接口文档浏览及测试：你的服务器ip+端口/doc.html#/home    例如：127.0.0.1:8080/doc.html
 
 
 另外前期仓促之间也用flutter搞了个app，欢迎star https://github.com/LiangWuCode/2019-nCoV
