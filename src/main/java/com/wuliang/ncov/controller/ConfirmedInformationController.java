@@ -1,7 +1,6 @@
 package com.wuliang.ncov.controller;
 
 import cn.hutool.json.JSONUtil;
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.fastjson.JSON;
 import com.wuliang.ncov.core.ResponseMode.Result;
 import com.wuliang.ncov.core.ResponseMode.ResultGenerator;
@@ -33,7 +32,6 @@ public class ConfirmedInformationController {
      */
     @GetMapping("/getGuideListByProvinceNameAndCityName")
     @ApiOperation("根据省市名称，获取当前市确诊人员信息")
-    @SentinelResource("/getGuideListByProvinceNameAndCityName")
     public Result getGuideListByProvinceNameAndCityName(@RequestParam("provinceName") String provinceName, @RequestParam("cityName") String cityName, @RequestParam("page") Integer page) {
         Object res = "";
         try {
@@ -57,7 +55,6 @@ public class ConfirmedInformationController {
      */
     @GetMapping("/getGuideListByProvinceName")
     @ApiOperation("根据省名称，获取确诊人员信息")
-    @SentinelResource("/getGuideListByProvinceName")
     public Result getGuideList(@RequestParam("provinceName") String provinceName, @RequestParam("num") Integer num, @RequestParam("page") Integer page) {
         Object res = "";
         try {

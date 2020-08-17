@@ -6,7 +6,6 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.fastjson.JSON;
 import com.wuliang.ncov.core.ResponseMode.Result;
 import com.wuliang.ncov.core.ResponseMode.ResultGenerator;
@@ -38,7 +37,6 @@ public class StatisticsController {
      */
     @GetMapping("/totalDataOne")
     @ApiOperation("数据统计1")
-    @SentinelResource("/totalDataOne")
     public Result totalDataOne() {
         Object res = "";
         try {
@@ -63,7 +61,6 @@ public class StatisticsController {
      */
     @GetMapping("/dataChangeList")
     @ApiOperation("数据改变列表")
-    @SentinelResource("/dataChangeList")
     public Result dataChangeList() {
         Object res = "";
         try {
@@ -87,7 +84,6 @@ public class StatisticsController {
      */
     @GetMapping("/totalDataTwo")
     @ApiOperation("数据统计2")
-    @SentinelResource("/totalDataTwo")
     public Result totalDataTwo() {
         Object res = "";
         try {
@@ -112,7 +108,6 @@ public class StatisticsController {
      */
     @GetMapping("/getCountyList")
     @ApiOperation("根据市级名称获取县区级数据")
-    @SentinelResource("/getCountyList")
     public Result getCountyList(@RequestParam("cityName") String cityName) {
         String result2 = HttpUtil.get("https://m.sm.cn/api/rest?method=yiqing.getPlaceInfo&uc_param_str=gi&city=" + cityName, CharsetUtil.CHARSET_UTF_8);
         return ResultGenerator.genSuccessResult(JSONUtil.parse(UnicodeUtil.toString(result2)));
@@ -126,7 +121,6 @@ public class StatisticsController {
      */
     @GetMapping("/getProvinceHistoryList")
     @ApiOperation("根据省的名称获取该省的历史数据")
-    @SentinelResource("/getProvinceHistoryList")
     public Result getProvinceHistoryList(@RequestParam("provinceName") String provinceName) {
         Object res = "";
         try {
@@ -150,7 +144,6 @@ public class StatisticsController {
      */
     @GetMapping("/getCityHistoryList")
     @ApiOperation("根据省市名称获取当前市区历史数据")
-    @SentinelResource("/getCityHistoryList")
     public Result getCityHistoryList(@RequestParam("provinceName") String provinceName, @RequestParam("cityName") String cityName) {
         Object res = "";
         try {
@@ -174,7 +167,6 @@ public class StatisticsController {
      */
     @GetMapping("/totalDataThree")
     @ApiOperation("数据统计3")
-    @SentinelResource("/totalDataThree")
     public Result totalDataThree() {
         String res = "";
         JSONObject json = JSONUtil.createObj();
@@ -217,7 +209,6 @@ public class StatisticsController {
      */
     @GetMapping("/flutterAppForMyself")
     @ApiOperation("自己开发的flutterApp使用")
-    @SentinelResource("/flutterAppForMyself")
     public Result flutterAppForMyself() {
         String res = "";
         JSONObject json = JSONUtil.createObj();

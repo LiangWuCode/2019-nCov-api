@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Component
+//@Component
 public class TimeInterceptor implements HandlerInterceptor {
     @Resource
     private RedisDaoImpl redisDao;

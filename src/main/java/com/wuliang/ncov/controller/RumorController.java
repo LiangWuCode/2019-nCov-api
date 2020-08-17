@@ -1,7 +1,6 @@
 package com.wuliang.ncov.controller;
 
 import cn.hutool.json.JSONUtil;
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.fastjson.JSON;
 import com.wuliang.ncov.core.ResponseMode.Result;
 import com.wuliang.ncov.core.ResponseMode.ResultGenerator;
@@ -32,7 +31,6 @@ public class RumorController {
      */
     @GetMapping("/getRumorList")
     @ApiOperation("谣言数据列表")
-    @SentinelResource("/getRumorList")
     public Result getRumorList(@RequestParam("page") Integer page) {
         Object res="";
         try {
@@ -56,7 +54,6 @@ public class RumorController {
      */
     @GetMapping("/getRumorDetail")
     @ApiOperation("根据谣言id获取谣言详情")
-    @SentinelResource("/getRumorDetail")
     public Result getRumorDetail(@RequestParam("id") String id) {
         Object res="";
         try {

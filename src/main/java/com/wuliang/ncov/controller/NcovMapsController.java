@@ -1,7 +1,6 @@
 package com.wuliang.ncov.controller;
 
 import cn.hutool.json.JSONUtil;
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.fastjson.JSON;
 import com.wuliang.ncov.core.ResponseMode.Result;
 import com.wuliang.ncov.core.ResponseMode.ResultGenerator;
@@ -31,7 +30,6 @@ public class NcovMapsController {
      */
     @GetMapping("/everyday")
     @ApiOperation("每日数据分析")
-    @SentinelResource("/everyday")
     public Result everyday() {
         Object res = "";
         try {
@@ -55,7 +53,6 @@ public class NcovMapsController {
      */
     @GetMapping("/ncovMaps")
     @ApiOperation("疫情地图数据")
-    @SentinelResource("/ncovMaps")
     public Result ncovMaps() {
         Object res = "";
         try {
