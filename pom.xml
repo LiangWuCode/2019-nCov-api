@@ -44,7 +44,7 @@
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
-            <version>1.12.1</version>
+            <version>1.15.3</version>
         </dependency>
 
         <dependency>
@@ -61,13 +61,13 @@
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.6</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.62</version>
+            <version>1.2.83_noneautotype</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
